@@ -1,12 +1,15 @@
 cmake_minimum_required(VERSION 3.12)
 
-add_executable(check-servers
-        test.c
+set(PROG_NAME "check-servers")
+
+add_executable(${PROG_NAME}
+        check.c
         )
 
-add_executable(interrupt
-        interrupt.c
-        )
+# Enable threads
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+target_link_libraries(${PROG_NAME} PRIVATE Threads::Threads)
 
 add_compile_options(-Wall
         -Wall
