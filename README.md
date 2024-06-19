@@ -1,4 +1,4 @@
-# Description
+# Unix system tools
 
 ## Server-check
 
@@ -10,28 +10,44 @@ it qualifies as `UNREACHABLE`, otherwise `OK`. The execution is done through thr
 
 Source code:
 
-> check.c
+> check-servers.c
 
 ### Usage
 
 ```bash
-./check-servers IP1 IP2 IP999
+./check-servers IP1 IP2 ...
 ```
 
-## Alias-check
+### Example
+
+![](doc/server-check.png)
+
+## Symbolic link check
 
 ### Description
 
-TODO
+The program searches recursively for all symbolic links leading to a file.
+
+Source code:
+
+> findsym.c
 
 ### Usage
 
-TODO
+```
+./findsym <PARENT_FOLDER> <FILE>
+```
+
+### Example
+
+![](doc/findsym-2.png)
 
 ## Sources
 
 1. Unix Threads in C: https://www.youtube.com/watch?v=d9s_d28yJq0&list=PLfqABt5AS4FmuQf70psXrsMLEDQXNkLq2
 2. https://www.geeksforgeeks.org/multithreading-in-c/
-3. certain level of support from ChatGPT
+3. https://linux.die.net/man/1/find
+4. https://linux.die.net/man/3/basename
+5. certain level of support from StackOverflow and ChatGPT
 
 

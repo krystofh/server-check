@@ -5,11 +5,11 @@ set(SYMLINK-EXECUTABLE "findsym")
 
 
 add_executable(${SERVER-EXECUTABLE}
-        check.c
+        check-servers.c
         )
 
 add_executable(${SYMLINK-EXECUTABLE}
-        symlink.c)
+        findsym.c)
 
 # Enable threads for server executable
 set(THREADS_PREFER_PTHREAD_FLAG ON)
