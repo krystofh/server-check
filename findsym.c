@@ -31,10 +31,8 @@ int main(int argc, char *argv[])
 
     // Look for links
     char cmd[256];
-    // snprintf(cmd, sizeof(cmd), "find %s -type l -ls | grep %s", parent_dir, file);
     snprintf(cmd, sizeof(cmd), "find %s/ -lname \"%s\" -ls", parent_dir, file);
-
-// Recursive ls and grep: ls -lR | grep "\->"
+    // Note: alternative find PARENT_FOLDER -type l -ls | grep FILE and using pipe
 #if DEBUG
     printf("Executing command: %s\n", cmd);
 #endif
