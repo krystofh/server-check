@@ -1,15 +1,20 @@
 cmake_minimum_required(VERSION 3.12)
 
-set(PROG_NAME "check-servers")
+set(SERVER-EXECUTABLE "check-servers")
+set(SYMLINK-EXECUTABLE "findsym")
 
-add_executable(${PROG_NAME}
+
+add_executable(${SERVER-EXECUTABLE}
         check.c
         )
 
-# Enable threads
+add_executable(${SYMLINK-EXECUTABLE}
+        symlink.c)
+
+# Enable threads for server executable
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
-target_link_libraries(${PROG_NAME} PRIVATE Threads::Threads)
+target_link_libraries(${SERVER-EXECUTABLE} PRIVATE Threads::Threads)
 
 add_compile_options(-Wall
         -Wall
