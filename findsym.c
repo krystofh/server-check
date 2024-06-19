@@ -1,6 +1,12 @@
-/*findsym /tmp /tmp/readme.txt
-/tmp/README -> readme.txt
-/tmp/test/ctime -> ../readme.txt
+/**
+   @file findsym.c
+   @author Krystof Hes
+   @brief Find symbolic links to a file recursively in a given folder
+   @version 1.0
+   @date 2024-06-18
+
+   @copyright Copyright (c) 2024
+
 */
 
 #include <stdio.h>
